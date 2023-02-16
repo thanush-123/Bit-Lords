@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="650.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterFormController">
+   <children>
+      <Label layoutX="222.0" layoutY="34.0" prefHeight="53.0" prefWidth="157.0" text="Register">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="135.0" prefHeight="31.0" prefWidth="110.0" text="User Name" textFill="#1fbed6">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <TextField fx:id="txtUserName" layoutX="232.0" layoutY="135.0" onAction="#txtUserNameOnAction" prefHeight="31.0" prefWidth="276.0" />
+      <Label layoutX="47.0" layoutY="213.0" prefHeight="31.0" prefWidth="110.0" text="E-mail" textFill="#1fbed6">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="288.0" prefHeight="31.0" prefWidth="110.0" text="Password" textFill="#1fbed6">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="366.0" prefHeight="31.0" prefWidth="144.0" text="Confirm Password" textFill="#1fbed6">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtEmail" layoutX="232.0" layoutY="213.0" onAction="#txtEmailOnAction" prefHeight="31.0" prefWidth="276.0" />
+      <TextField fx:id="txtPassword" layoutX="232.0" layoutY="288.0" onAction="#txtPasswordOnAction" prefHeight="31.0" prefWidth="276.0" />
+      <TextField fx:id="txtConfirmPassword" layoutX="232.0" layoutY="366.0" onAction="#txtConfirmPasswordOnAction" prefHeight="31.0" prefWidth="276.0" />
+      <Button fx:id="btnBack" layoutX="70.0" layoutY="492.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="31.0" prefWidth="92.0" text="&lt;&lt; Back" />
+      <Button fx:id="btnRegister" layoutX="404.0" layoutY="492.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="31.0" prefWidth="92.0" text="Register" />
+      <Label layoutX="143.0" layoutY="427.0" prefHeight="21.0" prefWidth="179.0" text="Already have an account?" />
+      <Hyperlink fx:id="lnkLogin" layoutX="322.0" layoutY="423.0" onAction="#lnkLoginOnClick" prefHeight="29.0" prefWidth="77.0" text="Login">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Hyperlink>
+      <Label fx:id="lblUserName" layoutX="243.0" layoutY="166.0" prefHeight="21.0" prefWidth="265.0" textFill="#bc0d0d">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEmail" layoutX="244.0" layoutY="244.0" prefHeight="21.0" prefWidth="265.0" textFill="#bc0d0d">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="lblPassword" layoutX="243.0" layoutY="319.0" prefHeight="21.0" prefWidth="265.0" textFill="#bc0d0d">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="lblConfirmPassword" layoutX="243.0" layoutY="397.0" prefHeight="21.0" prefWidth="265.0" textFill="#bc0d0d">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
