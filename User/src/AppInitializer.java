@@ -4,6 +4,11 @@
  */
 
 import java.io.IOException;
+
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -21,13 +26,22 @@ import javafx.stage.Stage;
 public class AppInitializer extends Application {
     
     @Override
-    public void start(Stage primaryStage) throws IOException  {
+    public void start(Stage primaryStage) throws ClassNotFoundException,IOException, SQLException  {
         Parent root=FXMLLoader.load(getClass().getResource("view/LoginForm.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();
         primaryStage.show();
-         
+        
+       
+            
+            
+//        ResultSet rs = statement.executeQuery("select * from user");
+//        while(rs.next()){
+//            System.out.println(rs.getString("id"));
+//        }
+//            System.out.println("Driver class is loaded successfully");
+        
                
     }
 
