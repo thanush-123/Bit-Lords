@@ -4,8 +4,16 @@
  */
 package controller;
 
+
+import static com.mysql.cj.Messages.getString;
+import db.DBConnection;
 import java.io.IOException;
+import static java.lang.Integer.parseInt;
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
@@ -21,7 +29,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Toggle;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -33,31 +45,54 @@ import javafx.stage.Window;
  */
 public class RegisterFormController implements Initializable {
 
+
+ 
     @FXML
     private AnchorPane root;
+
+    @FXML
+    private TextField txtName;
+
+    @FXML
+    private TextField txtAge;
+
     @FXML
     private Button btnBack;
+
     @FXML
     private Button btnRegister;
+
     @FXML
     private Hyperlink lnkLogin;
+
+    private Label lblUserName;
+
+
     @FXML
-    private TextField txtUserName;
+    private TextField txtCountry;
+
+    @FXML
+    private TextField txtMobileNumber;
+
     @FXML
     private TextField txtEmail;
+
     @FXML
-    private TextField txtPassword;
+    private TextField txtUserName;
+
     @FXML
-    private TextField txtConfirmPassword;
+    private PasswordField pwdPassword;
+
     @FXML
-    private Label lblUserName;
-    @FXML
-    private Label lblEmail;
-    @FXML
-    private Label lblPassword;
-    @FXML
-    private Label lblConfirmPassword;
+    private PasswordField pwdConfirmPassword;
     
+    @FXML
+    private ToggleGroup gender;
+    @FXML
+    private RadioButton rdbtnMale;
+    @FXML
+    private RadioButton rdbtnFemale;
+
     
     
 //     
@@ -86,8 +121,26 @@ public class RegisterFormController implements Initializable {
     }
 
     @FXML
-    private void btnRegisterOnAction(ActionEvent event) {
-       
+
+    private void btnRegisterOnAction(ActionEvent event) throws ClassNotFoundException, SQLException  {
+              
+        //dbConnection
+        PreparedStatement prestmt = DBConnection.getInstance().getConnection().prepareStatement("insert into user values(?,?,?,?,?,?,?,?,?)");
+        prestmt.setString(1, getNewId());
+        prestmt.setString(2, txtName.getText());
+        prestmt.setString(3, txtCountry.getText());
+        prestmt.setInt(4,parseInt(txtAge.getText()) );
+        prestmt.setString(5, ((RadioButton)gender.getSelectedToggle()).getText());
+        prestmt.setString(6, txtMobileNumber.getText());
+        prestmt.setString(7, txtEmail.getText());
+        prestmt.setString(8, txtUserName.getText());
+        prestmt.setString(9, pwdPassword.getText());       
+        prestmt.execute();
+        prestmt.close();
+//        System.out.println(getNewId());
+        
+        //create an alert
+
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"successfully Registered");
         alert.setTitle("Confirmation alert");
         alert.setHeaderText("NOW YOU CAN START THE JOURNEY.");
@@ -95,6 +148,18 @@ public class RegisterFormController implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
         
     }
+
+    private String getNewId() throws SQLException, ClassNotFoundException{
+        
+        Statement stmt = DBConnection.getInstance().getConnection().createStatement();
+        ResultSet rs = stmt.executeQuery("select id from user order by id desc limit 1");
+        rs.next();
+        int oldId=parseInt(rs.getString("id"));
+        String newId="00"+String.valueOf(oldId+1);
+        return newId;
+ 
+    }
+
     @FXML
     private void lnkLoginOnClick(ActionEvent event) throws IOException {
         Parent parent=FXMLLoader.load(getClass().getResource("../view/LoginForm.fxml"));
@@ -120,44 +185,19 @@ public class RegisterFormController implements Initializable {
     }
     @FXML
     private void txtEmailOnAction(ActionEvent event) {
-        String email = txtEmail.getText();
-        Pattern patternEmail=Pattern.compile("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
-        Matcher matcher=patternEmail.matcher(email);
-        if(matcher.find()){
-           lblEmail.setText(" ");
-           txtPassword.requestFocus();
-        }else{
-            lblEmail.setText("Invalid Entry..");
-        }
+
+//        String email = txtEmail.getText();
+//        Pattern patternEmail=Pattern.compile("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+//        Matcher matcher=patternEmail.matcher(email);
+//        if(matcher.find()){
+//           lblEmail.setText(" ");
+//           txtPassword.requestFocus();
+//        }else{
+//            lblEmail.setText("Invalid Entry..");
+//        }
     }
 
-    @FXML
-    private void txtPasswordOnAction(ActionEvent event) {
-        String password= txtPassword.getText();
-        Pattern patternPassword=Pattern.compile("[aeiou]");
-        Matcher matcher=patternPassword.matcher(password);
-        if(matcher.find()){
-           lblPassword.setText(" ");
-           txtConfirmPassword.requestFocus();
-        }else{
-            lblPassword.setText("Invalid Entry..");
-        }
-        
-        
-    }
 
-    @FXML
-    private void txtConfirmPasswordOnAction(ActionEvent event) {
-        String confirmPassword = txtConfirmPassword.getText();
-        Pattern patternPassword=Pattern.compile("[aeiou]");
-        Matcher matcher=patternPassword.matcher(confirmPassword);
-        if(matcher.find()){
-           lblConfirmPassword.setText(" ");
-           btnRegister.requestFocus();
-        }else{
-            lblConfirmPassword.setText("Invalid Entry..");
-        }
-    }
 
     
 }
