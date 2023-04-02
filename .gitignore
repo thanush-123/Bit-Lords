@@ -5,6 +5,8 @@
 /User/nbbuild/
 /User/nbbuild/
 /User/.nb-gradle/
+/User/manifest.mf
+/User/build.xml
 /Admin/target/
 /Admin/build/
 /Admin/dist/
@@ -12,3 +14,5 @@
 /Admin/nbbuild/
 /Admin/nbbuild/
 /Admin/.nb-gradle/
+/Admin/manifest.mf
+/Admin/build.xml
