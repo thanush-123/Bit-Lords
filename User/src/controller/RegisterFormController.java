@@ -4,6 +4,7 @@
  */
 package controller;
 
+
 import static com.mysql.cj.Messages.getString;
 import db.DBConnection;
 import java.io.IOException;
@@ -43,6 +44,7 @@ import javafx.stage.Window;
  * @author Asus
  */
 public class RegisterFormController implements Initializable {
+
 
  
     @FXML
@@ -90,6 +92,7 @@ public class RegisterFormController implements Initializable {
     private RadioButton rdbtnMale;
     @FXML
     private RadioButton rdbtnFemale;
+
     
     
 //     
@@ -118,9 +121,9 @@ public class RegisterFormController implements Initializable {
     }
 
     @FXML
+
     private void btnRegisterOnAction(ActionEvent event) throws ClassNotFoundException, SQLException  {
-        
-               
+              
         //dbConnection
         PreparedStatement prestmt = DBConnection.getInstance().getConnection().prepareStatement("insert into user values(?,?,?,?,?,?,?,?,?)");
         prestmt.setString(1, getNewId());
@@ -137,6 +140,7 @@ public class RegisterFormController implements Initializable {
 //        System.out.println(getNewId());
         
         //create an alert
+
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"successfully Registered");
         alert.setTitle("Confirmation alert");
         alert.setHeaderText("NOW YOU CAN START THE JOURNEY.");
@@ -144,6 +148,7 @@ public class RegisterFormController implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
         
     }
+
     private String getNewId() throws SQLException, ClassNotFoundException{
         
         Statement stmt = DBConnection.getInstance().getConnection().createStatement();
@@ -154,6 +159,7 @@ public class RegisterFormController implements Initializable {
         return newId;
  
     }
+
     @FXML
     private void lnkLoginOnClick(ActionEvent event) throws IOException {
         Parent parent=FXMLLoader.load(getClass().getResource("../view/LoginForm.fxml"));
@@ -179,6 +185,7 @@ public class RegisterFormController implements Initializable {
     }
     @FXML
     private void txtEmailOnAction(ActionEvent event) {
+
 //        String email = txtEmail.getText();
 //        Pattern patternEmail=Pattern.compile("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
 //        Matcher matcher=patternEmail.matcher(email);
@@ -189,6 +196,7 @@ public class RegisterFormController implements Initializable {
 //            lblEmail.setText("Invalid Entry..");
 //        }
     }
+
 
 
     

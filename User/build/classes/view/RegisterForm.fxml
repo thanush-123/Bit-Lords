@@ -73,7 +73,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      
+
       <Label layoutX="54.0" layoutY="309.0" text="Contact Details" />
       <Separator layoutX="48.0" layoutY="329.0" prefHeight="3.0" prefWidth="716.0" />
       <Label layoutX="53.0" layoutY="334.0" prefHeight="31.0" prefWidth="133.0" text="Mobile Number" textFill="#1fbed6">
