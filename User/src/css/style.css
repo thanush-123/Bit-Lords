@@ -1,0 +1,33 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Apr 4, 2023, 4:02:03 PM
+    Author     : Asus
+*/
+.side-bar-top{
+    -fx-background-color:#184E77 ;
+    -fx-background-radius: 0 0 30px 0;
+}
+.dashboard{
+    -fx-background-color: linear-gradient(to left, #184E77, #63B1C8);
+    -fx-background-radius: 20px;
+}
+
+.side-bar{
+    -fx-background-color:#00B4D8;
+        /*#1E6091*/
+}
+.background{
+    -fx-background-color:#FFFFFF;
+    /*-fx-background-color:#CBE5EC;*/
+}
+.card{
+    -fx-background-color:linear-gradient(to top, #52B69A ,#184E77, #184E77,#184E77);
+    -fx-background-radius: 30px;
+}
+.chat-button{
+    -fx-background-color:#2d6a4f;
+    -fx-background-radius: 30px;
+}

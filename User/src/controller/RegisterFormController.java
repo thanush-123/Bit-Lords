@@ -5,7 +5,6 @@
 package controller;
 
 
-import static com.mysql.cj.Messages.getString;
 import db.DBConnection;
 import java.io.IOException;
 import static java.lang.Integer.parseInt;
