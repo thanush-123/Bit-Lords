@@ -164,7 +164,7 @@
                               <TableColumn fx:id="totCol" minWidth="150.0" prefWidth="200.0" text="Total" />
                           </columns>
                         </TableView>
-                        <Button fx:id="btnRefresh" layoutX="881.0" layoutY="25.0" mnemonicParsing="false" onAction="#refreshTable" text="Refresh" />
+                        <Button fx:id="btnRefresh" layoutX="881.0" layoutY="25.0" mnemonicParsing="false" onAction="" text="Refresh" />
                         <Button layoutX="117.0" layoutY="25.0" mnemonicParsing="false" text="Button" />
                      </children></Pane>
                </children>
