@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox alignment="CENTER" prefHeight="850.0" prefWidth="271.0" styleClass="background" stylesheets="@../css/style.css" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <VBox prefHeight="104.0" prefWidth="271.0" styleClass="side-bar-top" stylesheets="@../css/style.css" />
+            <VBox prefHeight="527.0" prefWidth="300.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="30.0" prefWidth="110.0" text="Dashboard" textFill="#184e77">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/user.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="30.0" prefWidth="110.0" text="Investments" textFill="#184e77">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/file.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="30.0" prefWidth="110.0" text="Projects" textFill="#184e77">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/check.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="30.0" prefWidth="110.0" text="Events" textFill="#184e77">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/phone-book.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="30.0" prefWidth="110.0" text="Contact" textFill="#184e77">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="background" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="63.0" prefWidth="998.0">
+               <children>
+                  <Pane prefHeight="66.0" prefWidth="313.0" HBox.hgrow="ALWAYS" />
+                  <Pane prefHeight="68.0" prefWidth="195.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label alignment="CENTER" layoutX="16.0" layoutY="8.0" prefHeight="45.0" prefWidth="176.0" text="Project Details">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="59.0" prefWidth="305.0" HBox.hgrow="ALWAYS" />
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../../images/notification.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="108.0" text="User Name" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Cambria Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/user.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" right="30.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Pane prefHeight="63.0" prefWidth="8.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <VBox prefHeight="635.0" prefWidth="1029.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="125.0" prefWidth="1029.0">
+                     <children>
+                        <Pane prefHeight="125.0" prefWidth="260.0" HBox.hgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" text="Button" />
+                        <Pane prefHeight="125.0" prefWidth="362.0" HBox.hgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" text="Button" />
+                        <Pane prefHeight="125.0" prefWidth="249.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="512.0" prefWidth="1029.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <TableView prefHeight="511.0" prefWidth="505.0" HBox.hgrow="ALWAYS">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="151.0" prefWidth="1029.0">
+               <children>
+                  <Pane prefHeight="151.0" prefWidth="333.0" />
+                  <TableView prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+                  <Pane prefHeight="151.0" prefWidth="354.0" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
