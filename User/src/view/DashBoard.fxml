@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -14,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardController">
    <left>
       <VBox alignment="CENTER" prefHeight="850.0" prefWidth="271.0" styleClass="background" stylesheets="@../css/style.css" BorderPane.alignment="TOP_CENTER">
          <children>
@@ -28,7 +27,7 @@
                               <Image url="@../../images/dashboard.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="30.0" prefWidth="110.0" text="Dashboard" textFill="#184e77">
+                        <Label onMouseClicked="#dashboardOnClick" prefHeight="30.0" prefWidth="110.0" text="Dashboard" textFill="#184e77">
                            <font>
                               <Font name="Cambria Bold" size="18.0" />
                            </font>
@@ -45,7 +44,7 @@
                               <Image url="@../../images/user.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="30.0" prefWidth="110.0" text="Investments" textFill="#184e77">
+                        <Label onMouseClicked="#investmentsOnClick" prefHeight="30.0" prefWidth="110.0" text="Investments" textFill="#184e77">
                            <font>
                               <Font name="Cambria Bold" size="18.0" />
                            </font>
@@ -62,7 +61,7 @@
                               <Image url="@../../images/file.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="30.0" prefWidth="110.0" text="Projects" textFill="#184e77">
+                        <Label onMouseClicked="#projectsOnClick" prefHeight="30.0" prefWidth="110.0" text="Projects" textFill="#184e77">
                            <font>
                               <Font name="Cambria Bold" size="18.0" />
                            </font>
@@ -79,7 +78,7 @@
                               <Image url="@../../images/check.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="30.0" prefWidth="110.0" text="Events" textFill="#184e77">
+                        <Label onMouseClicked="#EventsOnClick" prefHeight="30.0" prefWidth="110.0" text="Events" textFill="#184e77">
                            <font>
                               <Font name="Cambria Bold" size="18.0" />
                            </font>
@@ -96,7 +95,7 @@
                               <Image url="@../../images/phone-book.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="30.0" prefWidth="110.0" text="Contact" textFill="#184e77">
+                        <Label onMouseClicked="#ContactOnClick" prefHeight="30.0" prefWidth="110.0" text="Contact" textFill="#184e77">
                            <font>
                               <Font name="Cambria Bold" size="18.0" />
                            </font>
@@ -149,7 +148,7 @@
                   </Pane>
                   <VBox prefHeight="225.0" prefWidth="379.0">
                      <children>
-                        <Label prefHeight="41.0" prefWidth="335.0" text="Good Morning ," textFill="#184e77">
+                        <Label fx:id="lblTimeStatus" prefHeight="41.0" prefWidth="335.0" text="Good Morning ," textFill="#184e77">
                            <font>
                               <Font name="Cambria Bold" size="48.0" />
                            </font>
@@ -157,7 +156,7 @@
                               <Insets bottom="20.0" top="30.0" />
                            </VBox.margin>
                         </Label>
-                        <Label text="Use Name ." textFill="#184e77">
+                        <Label fx:id="lblUserName" text="Use Name ." textFill="#184e77">
                            <font>
                               <Font name="Cambria Bold" size="36.0" />
                            </font>
@@ -269,11 +268,7 @@
             </HBox>
             <HBox prefHeight="69.0" prefWidth="1029.0">
                <children>
-                  <VBox prefHeight="69.0" prefWidth="495.0">
-                     <children>
-                        <JFXButton buttonType="RAISED" prefHeight="71.0" prefWidth="497.0" text="TEXT TO THE " VBox.vgrow="ALWAYS" />
-                     </children>
-                  </VBox>
+                  <VBox prefHeight="69.0" prefWidth="495.0" />
                </children>
             </HBox>
          </children>
