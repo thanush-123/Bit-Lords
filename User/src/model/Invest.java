@@ -4,10 +4,21 @@
  */
 package model;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author Asus
  */
 public class Invest {
+    private Project project;
+    private Person person;
+    private LocalDateTime dateTime;
+
+    public Invest(Project project, Person person) {
+        this.project = project;
+        this.person = person;
+        dateTime=LocalDateTime.now();
+    }
     
 }
