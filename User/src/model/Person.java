@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author Asus
  */
 public abstract class Person {
+        private String id;
         private String name;
         private String country;
         private int age;
@@ -20,7 +21,7 @@ public abstract class Person {
         private String email;
         private String userName;
         private String password;
-        ArrayList<Project> projects=new ArrayList<>();
+        
 
     public Person(String name, String country, int age, String gender, String mobileNumber, String email, String userName, String password) {
         this.name = name;
@@ -32,10 +33,13 @@ public abstract class Person {
         this.userName = userName;
         this.password = password;
     }
-   
-    public void addProject(Project project){
-        projects.add(project);
+
+    @Override
+    public String toString() {
+        return "Person{" + "id=" + id + ", name=" + name + ", country=" + country + ", age=" + age + ", gender=" + gender + ", mobileNumber=" + mobileNumber + ", email=" + email + ", userName=" + userName + ", password=" + password + '}';
     }
+   
+   
    
    
     

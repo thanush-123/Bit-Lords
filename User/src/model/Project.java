@@ -9,6 +9,7 @@ import static java.lang.Integer.parseInt;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,13 +20,23 @@ public class Project {
     String pName;
     String description;
     String status;
+    Admin admin;    
+    ArrayList<Invest> investments=new ArrayList<>();
+    
+    
 
     public Project(String pName, String description, String status) {
         this.pName = pName;
         this.description = description;
         this.status = status;
     }
-     private void createNewId() throws SQLException, ClassNotFoundException{
+    
+    public void addInvestment(Invest investment){
+        investments.add(investment);
+        
+    }
+    
+    public void createNewId() throws SQLException, ClassNotFoundException{
         
         Statement stmt = DBConnection.getInstance().getConnection().createStatement();
         ResultSet rs = stmt.executeQuery("select id from user order by id desc limit 1");

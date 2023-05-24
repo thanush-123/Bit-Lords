@@ -4,17 +4,23 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Asus
  */
 public class User extends Person{
-
+    ArrayList<Invest> investments=new ArrayList<>();
+    
     public User(String name, String country, int age, String gender, String mobileNumber, String email, String userName, String password) {
         super(name, country, age, gender, mobileNumber, email, userName, password);
         
     }
-
+    public void addInvestment(Invest investment){
+        investments.add(investment);
+        
+    }
     
     
 }
