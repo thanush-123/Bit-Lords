@@ -9,11 +9,9 @@ import db.DBConnection;
 import java.io.IOException;
 import static java.lang.Integer.parseInt;
 import java.net.URL;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,19 +21,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 /**
  * FXML Controller class
@@ -106,7 +100,8 @@ public class RegisterFormController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+       
     }    
 
     @FXML
@@ -121,31 +116,38 @@ public class RegisterFormController implements Initializable {
 
     @FXML
 
-    private void btnRegisterOnAction(ActionEvent event) throws ClassNotFoundException, SQLException  {
-              
+    private void btnRegisterOnAction(ActionEvent event) throws ClassNotFoundException, SQLException, IOException  {
         //dbConnection
-        PreparedStatement prestmt = DBConnection.getInstance().getConnection().prepareStatement("insert into user values(?,?,?,?,?,?,?,?,?)");
-        prestmt.setString(1, getNewId());
-        prestmt.setString(2, txtName.getText());
-        prestmt.setString(3, txtCountry.getText());
-        prestmt.setInt(4,parseInt(txtAge.getText()) );
-        prestmt.setString(5, ((RadioButton)gender.getSelectedToggle()).getText());
-        prestmt.setString(6, txtMobileNumber.getText());
-        prestmt.setString(7, txtEmail.getText());
-        prestmt.setString(8, txtUserName.getText());
-        prestmt.setString(9, pwdPassword.getText());       
-        prestmt.execute();
-        prestmt.close();
+        
+//        PreparedStatement prestmt = DBConnection.getInstance().getConnection().prepareStatement("insert into user values(?,?,?,?,?,?,?,?,?)");
+//        prestmt.setString(1, getNewId());
+//        prestmt.setString(2, txtName.getText());
+//        prestmt.setString(3, txtCountry.getText());
+//        prestmt.setInt(4,parseInt(txtAge.getText()) );
+//        prestmt.setString(5, ((RadioButton)gender.getSelectedToggle()).getText());
+//        prestmt.setString(6, txtMobileNumber.getText());
+//        prestmt.setString(7, txtEmail.getText());
+//        prestmt.setString(8, txtUserName.getText());
+//        prestmt.setString(9, pwdPassword.getText());       
+//        prestmt.execute();
+//        prestmt.close();
 //        System.out.println(getNewId());
         
-        //create an alert
-
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"successfully Registered");
-        alert.setTitle("Confirmation alert");
-        alert.setHeaderText("NOW YOU CAN START THE JOURNEY.");
-        alert.setContentText("Login to your account");
-        Optional<ButtonType> result = alert.showAndWait();
+         Parent parent=FXMLLoader.load(getClass().getResource("../view/LoginForm.fxml"));
+        Scene scene = new Scene(parent);
+        Stage primaryStage  = (Stage)root.getScene().getWindow();
+        primaryStage.setScene(scene);
+        primaryStage.centerOnScreen();
+        primaryStage.show();
         
+        
+//create an alert
+
+//Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"successfully Registered");
+//alert.setTitle("Confirmation alert");
+//alert.setHeaderText("NOW YOU CAN START THE JOURNEY.");
+//alert.setContentText("Login to your account");
+//Optional<ButtonType> result = alert.showAndWait();
     }
 
     private String getNewId() throws SQLException, ClassNotFoundException{

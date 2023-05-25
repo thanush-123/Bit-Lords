@@ -18,6 +18,8 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import java.lang.reflect.InvocationTargetException;
+
 
 /**
  * FXML Controller class
@@ -57,8 +59,13 @@ public class LoginFormController implements Initializable {
     }
 
     @FXML
-    private void btnLoginOnAction(ActionEvent event) {
+    private void btnLoginOnAction(ActionEvent event) throws IOException {
+        Parent parent=FXMLLoader.load(getClass().getResource("../view/DashBoard.fxml"));
+        Scene scene = new Scene(parent);
+        Stage primaryStage=(Stage) root.getScene().getWindow();
+        primaryStage.setScene(scene);
+        primaryStage.centerOnScreen();
+        primaryStage.show();
+    
     }
-    
-    
 }

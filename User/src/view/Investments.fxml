@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <VBox alignment="CENTER" prefHeight="850.0" prefWidth="271.0" styleClass="background" stylesheets="@../css/style.css" BorderPane.alignment="TOP_CENTER">
          <children>
@@ -155,13 +155,16 @@
                <children>
                   <Pane prefHeight="225.0" prefWidth="95.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <TableView layoutX="40.0" layoutY="82.0" prefHeight="629.0" prefWidth="964.0">
+                        <TableView fx:id="tableView" layoutX="40.0" layoutY="82.0" prefHeight="629.0" prefWidth="964.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="C1" />
-                            <TableColumn prefWidth="75.0" text="C2" />
+                            <TableColumn fx:id="idCol" minWidth="200.0" prefWidth="200.0" text="ID/Name" />
+                            <TableColumn fx:id="pidCol" minWidth="150.0" prefWidth="150.0" text="Project ID" />
+                              <TableColumn fx:id="pnameCol" minWidth="200.0" prefWidth="200.0" text="Project Name" />
+                              <TableColumn fx:id="unitPriceCol" minWidth="150.0" prefWidth="200.0" text="Unit Price" />
+                              <TableColumn fx:id="totCol" minWidth="150.0" prefWidth="200.0" text="Total" />
                           </columns>
                         </TableView>
-                        <Button layoutX="881.0" layoutY="25.0" mnemonicParsing="false" text="Button" />
+                        <Button fx:id="btnRefresh" layoutX="881.0" layoutY="25.0" mnemonicParsing="false" onAction="" text="Refresh" />
                         <Button layoutX="117.0" layoutY="25.0" mnemonicParsing="false" text="Button" />
                      </children></Pane>
                </children>
