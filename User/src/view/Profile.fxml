@@ -1,27 +1,196 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="controller.ProfileController">
-   <children>
-      <TextField fx:id="txtName" layoutX="118.0" layoutY="61.0" />
-      <TextField fx:id="txtCountry" layoutX="119.0" layoutY="111.0" />
-      <TextField fx:id="txtAge" layoutX="119.0" layoutY="160.0" />
-      <TextField fx:id="txtGender" layoutX="120.0" layoutY="210.0" />
-      <TextField fx:id="txtMobile" layoutX="119.0" layoutY="268.0" />
-      <TextField fx:id="txtEmail" layoutX="328.0" layoutY="61.0" />
-      <TextField fx:id="txtUsername" layoutX="338.0" layoutY="99.0" />
-      <Label layoutX="58.0" layoutY="65.0" text="Name" />
-      <Label layoutX="58.0" layoutY="115.0" text="Country" />
-      <Label layoutX="58.0" layoutY="164.0" text="Age" />
-      <Label layoutX="58.0" layoutY="214.0" text="Gender" />
-      <Label layoutX="58.0" layoutY="272.0" text="Mobie" />
-      <Label layoutX="500.0" layoutY="65.0" text="Email" />
-      <Label layoutX="516.0" layoutY="102.0" text="Username" />
-      <Button fx:id="btnUpdate" layoutX="361.0" layoutY="160.0" mnemonicParsing="false" onAction="#btnUpdatePersonOnAction" text="Update" />
-   </children>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProfileController">
+   <left>
+      <VBox alignment="CENTER" prefHeight="850.0" prefWidth="271.0" styleClass="background" stylesheets="@../css/style.css" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <VBox prefHeight="104.0" prefWidth="271.0" styleClass="side-bar-top" stylesheets="@../css/style.css" />
+            <VBox prefHeight="527.0" prefWidth="300.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/dashboard.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="30.0" prefWidth="110.0" text="Dashboard" textFill="#184e77">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/user.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="30.0" prefWidth="110.0" text="Investments" textFill="#184e77">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/file.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="30.0" prefWidth="110.0" text="Projects" textFill="#184e77">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/check.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="30.0" prefWidth="110.0" text="Events" textFill="#184e77">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/phone-book.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="30.0" prefWidth="110.0" text="Contact" textFill="#184e77">
+                           <font>
+                              <Font name="Cambria Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #f2f2f2;" styleClass="background" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="63.0" prefWidth="998.0" style="-fx-background-color: #2E4A62;">
+               <children>
+                  <Pane prefHeight="66.0" prefWidth="313.0" HBox.hgrow="ALWAYS" />
+                  <Pane prefHeight="68.0" prefWidth="195.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label alignment="CENTER" layoutX="16.0" layoutY="8.0" prefHeight="45.0" prefWidth="176.0" text="User Profile" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="59.0" prefWidth="305.0" HBox.hgrow="ALWAYS" />
+                  <Pane prefHeight="63.0" prefWidth="8.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <VBox prefHeight="635.0" prefWidth="1029.0">
+               <children>
+                  <Pane prefHeight="600.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="568.0" layoutY="315.0" text="FullName">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="151.0" layoutY="535.0" text="Country">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="182.0" layoutY="389.0" text="Age">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="580.0" layoutY="387.0" text="Gender">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="159.0" layoutY="460.0" text="Mobile">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="591.0" layoutY="462.0" text="Email">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="140.0" layoutY="314.0" text="UserName">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtUsername" layoutX="289.0" layoutY="310.0" prefHeight="35.0" prefWidth="174.0" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="444.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/user.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="txtName" layoutX="717.0" layoutY="307.0" prefHeight="35.0" prefWidth="174.0" />
+                        <TextField fx:id="txtAge" layoutX="289.0" layoutY="381.0" prefHeight="35.0" prefWidth="174.0" />
+                        <TextField fx:id="txtGender" layoutX="720.0" layoutY="382.0" prefHeight="35.0" prefWidth="174.0" />
+                        <TextField fx:id="txtMobile" layoutX="288.0" layoutY="456.0" prefHeight="35.0" prefWidth="174.0" />
+                        <TextField fx:id="txtEmail" layoutX="723.0" layoutY="456.0" prefHeight="35.0" prefWidth="174.0" />
+                        <TextField fx:id="txtCountry" layoutX="289.0" layoutY="530.0" prefHeight="35.0" prefWidth="174.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnUpdate" layoutX="265.0" layoutY="44.0" mnemonicParsing="false" onAction="#btnUpdatePersonOnAction" prefHeight="45.0" prefWidth="220.0" text="Update Profile" textAlignment="CENTER" />
+                  <Button fx:id="btnDelete" layoutX="603.0" layoutY="44.0" mnemonicParsing="false" onAction="#btnDeletePersonOnAction" prefHeight="45.0" prefWidth="220.0" text="Delete Profile" textAlignment="CENTER" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
