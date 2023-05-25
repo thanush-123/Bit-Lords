@@ -29,7 +29,7 @@ public class AppInitializer extends Application {
 
     public void start(Stage primaryStage) throws ClassNotFoundException,IOException, SQLException  {
 
-        Parent root=FXMLLoader.load(getClass().getResource("view/LoginForm.fxml"));
+        Parent root=FXMLLoader.load(getClass().getResource("view/Profile.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();

@@ -9,6 +9,7 @@ import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -109,6 +110,15 @@ public class DashBoardController implements Initializable {
 //        primaryStage.setScene(scene);
 //        primaryStage.centerOnScreen();
 //        primaryStage.show();
+    }    
+    private void clickProfile(ActionEvent event) throws IOException {
+        Parent parent=FXMLLoader.load(getClass().getResource("../view/Profile.fxml"));
+        Scene scene = new Scene(parent);
+        Stage primaryStage=(Stage) root.getScene().getWindow();
+        primaryStage.setScene(scene);
+        primaryStage.centerOnScreen();
+        primaryStage.show();
+    
     }
     
 }

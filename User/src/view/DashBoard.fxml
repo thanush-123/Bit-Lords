@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.effect.Blend?>
@@ -13,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardController">
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashBoardController">
    <left>
       <VBox alignment="CENTER" prefHeight="850.0" prefWidth="271.0" styleClass="background" stylesheets="@../css/style.css" BorderPane.alignment="TOP_CENTER">
          <children>
@@ -116,12 +117,13 @@
          <children>
             <HBox alignment="CENTER_RIGHT" prefHeight="63.0" prefWidth="998.0">
                <children>
+                  <Button mnemonicParsing="false" onAction="#clickProfile" text="Profile" />
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/notification.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="108.0" text="User Name">
+                  <Label alignment="CENTER_RIGHT" onMouseClicked="#clickProfile" prefHeight="30.0" prefWidth="108.0" text="User Name">
                      <font>
                         <Font name="Cambria Bold" size="15.0" />
                      </font>
@@ -129,7 +131,7 @@
                         <Insets left="10.0" />
                      </HBox.margin>
                   </Label>
-                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#clickProfile" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../images/user.png" />
                      </image>
