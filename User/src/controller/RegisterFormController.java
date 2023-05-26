@@ -9,6 +9,7 @@ import db.DBConnection;
 import java.io.IOException;
 import static java.lang.Integer.parseInt;
 import java.net.URL;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -119,20 +120,20 @@ public class RegisterFormController implements Initializable {
     private void btnRegisterOnAction(ActionEvent event) throws ClassNotFoundException, SQLException, IOException  {
         //dbConnection
         
-//        PreparedStatement prestmt = DBConnection.getInstance().getConnection().prepareStatement("insert into user values(?,?,?,?,?,?,?,?,?)");
-//        prestmt.setString(1, getNewId());
-//        prestmt.setString(2, txtName.getText());
-//        prestmt.setString(3, txtCountry.getText());
-//        prestmt.setInt(4,parseInt(txtAge.getText()) );
-//        prestmt.setString(5, ((RadioButton)gender.getSelectedToggle()).getText());
-//        prestmt.setString(6, txtMobileNumber.getText());
-//        prestmt.setString(7, txtEmail.getText());
-//        prestmt.setString(8, txtUserName.getText());
-//        prestmt.setString(9, pwdPassword.getText());       
+//        PreparedStatement prestmt = DBConnection.getInstance().getConnection().prepareStatement("insert into user([Name],[Country],[Age],[Gender],[MobileNo],[Email],[Username],[Password]) values(?,?,?,?,?,?,?,?)");
+//        //prestmt.setString(1, getNewId());
+//        prestmt.setString(1, txtName.getText());
+//        prestmt.setString(2, txtCountry.getText());
+//        prestmt.setInt(3,parseInt(txtAge.getText()) );
+//        prestmt.setString(4, ((RadioButton)gender.getSelectedToggle()).getText());
+//        prestmt.setString(5, txtMobileNumber.getText());
+//        prestmt.setString(6, txtEmail.getText());
+//        prestmt.setString(7, txtUserName.getText());
+//        prestmt.setString(8, pwdPassword.getText());       
 //        prestmt.execute();
 //        prestmt.close();
 //        System.out.println(getNewId());
-        
+//        
          Parent parent=FXMLLoader.load(getClass().getResource("../view/LoginForm.fxml"));
         Scene scene = new Scene(parent);
         Stage primaryStage  = (Stage)root.getScene().getWindow();

@@ -4,8 +4,11 @@
  */
 package model;
 
+import com.mysql.cj.protocol.Resultset;
 import db.DBConnection;
 import static java.lang.Integer.parseInt;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -46,4 +49,58 @@ public class Project {
         id=newId;
  
     }
+
+    public void insertProjectData(){
+        
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getpName() {
+        return pName;
+    }
+
+    public void setpName(String pName) {
+        this.pName = pName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Admin getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
+    }
+
+    public ArrayList<Invest> getInvestments() {
+        return investments;
+    }
+
+    public void setInvestments(ArrayList<Invest> investments) {
+        this.investments = investments;
+    }
+    
+    
 }

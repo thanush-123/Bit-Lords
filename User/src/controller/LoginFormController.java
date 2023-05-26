@@ -4,6 +4,8 @@
  */
 package controller;
 
+import com.mysql.cj.protocol.Resultset;
+import db.DBConnection;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,6 +21,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.lang.reflect.InvocationTargetException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import model.Admin;
+import model.Person;
 
 
 /**
@@ -59,7 +68,29 @@ public class LoginFormController implements Initializable {
     }
 
     @FXML
-    private void btnLoginOnAction(ActionEvent event) throws IOException {
+    private void btnLoginOnAction(ActionEvent event) throws IOException, ClassNotFoundException, SQLException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        PreparedStatement stmt=connection.prepareStatement("select * from user where userName='"+txtUserName.getText()+"'and Password='"+txtPassword.getText()+"'");
+        try{ 
+            ResultSet rs = stmt.executeQuery();
+          
+           if(rs.next()){
+               //Person person=new Admin();
+               String name=rs.getString(8);
+                String password=rs.getString(9);
+                System.out.println(name+password);
+               
+           }
+        }catch(SQLException e){
+            System.out.println(e.getCause());
+            //Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"successfully Registered");
+            //alert.setTitle("Confirmation alert");
+            //alert.setHeaderText("NOW YOU CAN START THE JOURNEY.");
+            //alert.setContentText("Login to your account");
+            //Optional<ButtonType> result = alert.showAndWait();
+        }
+        
+
         Parent parent=FXMLLoader.load(getClass().getResource("../view/DashBoard.fxml"));
         Scene scene = new Scene(parent);
         Stage primaryStage=(Stage) root.getScene().getWindow();

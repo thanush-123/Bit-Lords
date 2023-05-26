@@ -11,16 +11,26 @@ public class ProjectTM {
     private SimpleStringProperty projectId = new SimpleStringProperty("");
     private SimpleStringProperty projectName = new SimpleStringProperty("");
     private SimpleStringProperty projectDescription = new SimpleStringProperty("");
-
-    public ProjectTM(String projectId, String projectName, String projectDescription) {
+    private SimpleStringProperty projectStatus = new SimpleStringProperty("");
+         
+    public ProjectTM(String projectId, String projectName, String projectDescription,String status) {
         this.projectId.set(projectId);
         this.projectName.set(projectName);
         this.projectDescription.set(projectDescription);
+        this.projectStatus.set(status);
 
     }
-
+    
     public ProjectTM() {
     
+    }
+
+    public SimpleStringProperty getProjectStatus() {
+        return projectStatus;
+    }
+
+    public void setStatus(SimpleStringProperty status) {
+        this.projectStatus = status;
     }
     
 

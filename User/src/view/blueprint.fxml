@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BlueprintController">
    <left>
       <VBox alignment="CENTER" prefHeight="850.0" prefWidth="271.0" styleClass="background" stylesheets="@../css/style.css" BorderPane.alignment="TOP_CENTER">
          <children>
@@ -27,7 +27,7 @@
                               <Image url="@../../images/dashboard.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="30.0" prefWidth="110.0" text="Dashboard" textFill="#184e77">
+                        <Label onMouseClicked="#dashboardOnClick" prefHeight="30.0" prefWidth="110.0" text="Dashboard" textFill="#184e77">
                            <font>
                               <Font name="Cambria Bold" size="18.0" />
                            </font>
@@ -44,7 +44,7 @@
                               <Image url="@../../images/user.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="30.0" prefWidth="110.0" text="Investments" textFill="#184e77">
+                        <Label onMouseClicked="#investmentsOnClick" prefHeight="30.0" prefWidth="110.0" text="Investments" textFill="#184e77">
                            <font>
                               <Font name="Cambria Bold" size="18.0" />
                            </font>
@@ -61,7 +61,7 @@
                               <Image url="@../../images/file.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="30.0" prefWidth="110.0" text="Projects" textFill="#184e77">
+                        <Label onMouseClicked="#projectsOnClick" prefHeight="30.0" prefWidth="110.0" text="Projects" textFill="#184e77">
                            <font>
                               <Font name="Cambria Bold" size="18.0" />
                            </font>
@@ -78,7 +78,7 @@
                               <Image url="@../../images/check.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="30.0" prefWidth="110.0" text="Events" textFill="#184e77">
+                        <Label onMouseClicked="#EventsOnClick" prefHeight="30.0" prefWidth="110.0" text="Events" textFill="#184e77">
                            <font>
                               <Font name="Cambria Bold" size="18.0" />
                            </font>
@@ -95,7 +95,7 @@
                               <Image url="@../../images/phone-book.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="30.0" prefWidth="110.0" text="Contact" textFill="#184e77">
+                        <Label onMouseClicked="#ContactOnClick" prefHeight="30.0" prefWidth="110.0" text="Contact" textFill="#184e77">
                            <font>
                               <Font name="Cambria Bold" size="18.0" />
                            </font>
@@ -151,23 +151,50 @@
                   <Pane prefHeight="63.0" prefWidth="8.0" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="761.0" prefWidth="1029.0">
+            <VBox prefHeight="635.0" prefWidth="1029.0">
                <children>
-                  <Pane prefHeight="225.0" prefWidth="95.0" HBox.hgrow="ALWAYS">
+                  <HBox alignment="CENTER" prefHeight="125.0" prefWidth="1029.0">
                      <children>
-                        <TableView fx:id="tableView" layoutX="40.0" layoutY="82.0" prefHeight="629.0" prefWidth="964.0">
+                        <Pane prefHeight="125.0" prefWidth="260.0" HBox.hgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" text="Button" />
+                        <Pane prefHeight="125.0" prefWidth="362.0" HBox.hgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" text="Button" />
+                        <Pane prefHeight="125.0" prefWidth="249.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="512.0" prefWidth="1029.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <TableView fx:id="tblBlueprint" prefHeight="511.0" prefWidth="505.0" HBox.hgrow="ALWAYS">
                           <columns>
-                            <TableColumn fx:id="idCol" minWidth="200.0" prefWidth="200.0" text="ID/Name" />
-                            <TableColumn fx:id="pidCol" minWidth="150.0" prefWidth="150.0" text="Project ID" />
-                              <TableColumn fx:id="pnameCol" minWidth="200.0" prefWidth="200.0" text="Project Name" />
-                              <TableColumn fx:id="unitPriceCol" minWidth="150.0" prefWidth="200.0" text="Unit Price" />
-                              <TableColumn fx:id="totCol" minWidth="150.0" prefWidth="200.0" text="Total" />
+                            <TableColumn prefWidth="82.0" text="Project Id" />
+                            <TableColumn prefWidth="178.0" text="Project Name" />
+                              <TableColumn prefWidth="216.0" text="Project Description" />
+                              <TableColumn prefWidth="152.0" text="Status" />
                           </columns>
                         </TableView>
-                        <Button fx:id="btnRefresh" layoutX="881.0" layoutY="25.0" mnemonicParsing="false" onAction="" text="Refresh" />
-                        <Button layoutX="117.0" layoutY="25.0" mnemonicParsing="false" text="Button" />
-                     </children></Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
                </children>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="151.0" prefWidth="1029.0">
+               <children>
+                  <Pane prefHeight="151.0" prefWidth="333.0" />
+                  <TableView prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+                  <Pane prefHeight="151.0" prefWidth="354.0" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
             </HBox>
          </children>
       </VBox>

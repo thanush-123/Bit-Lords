@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProjectController">
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="850.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InvestmentController">
    <left>
       <VBox alignment="CENTER" prefHeight="850.0" prefWidth="271.0" styleClass="background" stylesheets="@../css/style.css" BorderPane.alignment="TOP_CENTER">
          <children>
@@ -158,19 +158,20 @@
                         <Pane prefHeight="125.0" prefWidth="260.0" HBox.hgrow="ALWAYS" />
                         <Button mnemonicParsing="false" onMouseClicked="#btnBackOnAction" prefHeight="31.0" prefWidth="81.0" text="Back" />
                         <Pane prefHeight="125.0" prefWidth="362.0" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" onMouseClicked="#btnAddProjectOnAction" prefHeight="31.0" prefWidth="111.0" text="Add Project" />
+                        <Button mnemonicParsing="false" onMouseClicked="#btnAddRefreshOnAction" prefHeight="31.0" prefWidth="111.0" text="Refresh" />
                         <Pane prefHeight="125.0" prefWidth="249.0" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="512.0" prefWidth="1029.0">
                      <children>
                         <Pane prefHeight="200.0" prefWidth="200.0" />
-                        <TableView fx:id="tblProject" prefHeight="511.0" prefWidth="505.0" HBox.hgrow="ALWAYS">
+                        <TableView fx:id="tblProject" prefHeight="511.0" prefWidth="874.0" HBox.hgrow="ALWAYS">
                           <columns>
-                            <TableColumn prefWidth="82.0" text="Project Id" />
-                            <TableColumn prefWidth="178.0" text="Project Name" />
-                              <TableColumn prefWidth="202.0" text="Project Description" />
-                              <TableColumn minWidth="0.0" prefWidth="166.0" text="Status" />
+                            <TableColumn prefWidth="117.0" text="User ID" />
+                            <TableColumn prefWidth="143.0" text="Project ID" />
+                              <TableColumn prefWidth="289.0" text="Project Name" />
+                              <TableColumn minWidth="0.0" prefWidth="117.0" text="Price" />
+                              <TableColumn minWidth="0.0" prefWidth="128.0" text="Total" />
                           </columns>
                         </TableView>
                         <Pane prefHeight="200.0" prefWidth="200.0" />
