@@ -1,33 +1,28 @@
-package controller;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
+package view;
+
 import db.DBConnection;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Date;
 import java.util.Optional;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import model.Person;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -35,9 +30,7 @@ import model.Person;
  * @author nuvin
  */
 public class ProfileController implements Initializable {
-    
-    @FXML
-    private Button btnUpdate;
+
     @FXML
     private TextField txtUsername;
     @FXML
@@ -45,14 +38,16 @@ public class ProfileController implements Initializable {
     @FXML
     private TextField txtAge;
     @FXML
+    private TextField txtGender;
+    @FXML
     private TextField txtMobile;
     @FXML
     private TextField txtEmail;
     @FXML
-    private TextField txtGender;
-    @FXML
     private TextField txtCountry;
-    
+    @FXML
+    private Button btnUpdate;
+
     @FXML
     private void btnUpdatePersonOnAction(ActionEvent event) throws ClassNotFoundException, SQLException, IOException  {
         
@@ -74,13 +69,13 @@ public class ProfileController implements Initializable {
                     || txtGender.getText().isEmpty()
                     || txtMobile.getText().isEmpty()
                     || txtEmail.getText().isEmpty()) {
-                alert = new Alert(AlertType.ERROR);
+                alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error Message");
                 alert.setHeaderText(null);
                 alert.setContentText("Please fill all blank fields");
                 alert.showAndWait();
             } else {
-                alert = new Alert(AlertType.CONFIRMATION);
+                alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Cofirmation Message");
                 alert.setHeaderText(null);
                 alert.setContentText("Are you sure you want to do changes?");
@@ -89,12 +84,43 @@ public class ProfileController implements Initializable {
                 if (option.get().equals(ButtonType.OK)) {
                     Statement statement = DBConnection.getInstance().getConnection().createStatement();
                     statement.execute(sql);
-                    alert = new Alert(AlertType.INFORMATION);
+                    alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Information Message");
                     alert.setHeaderText(null);
                     alert.setContentText("Successfully Updated!");
                     alert.showAndWait();
                 }
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+    
+    @FXML
+    private void btnDeletePersonOnAction(ActionEvent event) throws ClassNotFoundException, SQLException, IOException  {
+        
+        String sql = "DELETE FROM person WHERE id = '11123'";
+        
+        try {
+            Alert alert;
+            alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Cofirmation Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Are you sure you want to delete user?");
+            Optional<ButtonType> option = alert.showAndWait();
+
+            if (option.get().equals(ButtonType.OK)) {
+                /*Statement statement = DBConnection.getInstance().getConnection().createStatement();
+                //statement.execute(sql);
+                Parent parent=FXMLLoader.load(getClass().getResource("../view/DashBoard.fxml"));
+                Scene scene = new Scene(parent);
+                Stage primaryStagec=(Stage) root.getScene().getWindow();
+                primaryStage.setScene(scene);
+                primaryStage.centerOnScreen();
+                primaryStage.show();*/
 
             }
 
@@ -130,9 +156,13 @@ public class ProfileController implements Initializable {
         
     }
     
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        // TODO
         getProfileData();
-    } 
+    }   
     
 }
