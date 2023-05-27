@@ -4,11 +4,18 @@
  */
 package controller;
 
+import db.DBConnection;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -32,6 +39,14 @@ public class DashBoardController implements Initializable {
     private Label lblUserName;
     @FXML
     private BorderPane root;
+    @FXML
+    private Label lblprojectsTab;
+
+    @FXML
+    private Label lblEventsTab;
+
+    @FXML
+    private Label lblInvestmentsTab;
 
     /**
      * Initializes the controller class.
@@ -43,6 +58,40 @@ public class DashBoardController implements Initializable {
         int nightCompareTime=currentTime.compareTo(nightLimit);
         LocalTime afternoonLimit=LocalTime.of(12,00,00);
         int afternoonCompareTime=currentTime.compareTo(afternoonLimit);
+        
+        Connection connection;
+        try {
+            connection = DBConnection.getInstance().getConnection();
+            Statement stmt=connection.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT COUNT(*) AS row_count FROM Project");
+            while(rs.next()){
+                int rowCount = rs.getInt("row_count");
+                lblprojectsTab.setText("Currently "+rowCount+" Projects are active");
+                
+            }
+            stmt.close();
+            Statement stmt2=connection.createStatement();
+            ResultSet rs2 = stmt2.executeQuery("SELECT COUNT(*) AS row_count2 FROM event");
+            while(rs.next()){
+                int rowCount2 = rs.getInt("row_count2");
+                lblEventsTab.setText("Currently "+rowCount2+" Projects are available");
+                
+            }
+            stmt2.close();
+            Statement stmt3=connection.createStatement();
+            ResultSet rs3 = stmt3.executeQuery("SELECT COUNT(*) AS row_count3 FROM invest");
+            while(rs.next()){
+                int rowCount3 = rs.getInt("row_count3");
+                lblInvestmentsTab.setText("Currently "+rowCount3+" Projects are available");
+                
+            }
+            stmt3.close();
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Class couldn't be found.");
+        } catch (SQLException ex) {
+            System.out.println("Error of database connection.");
+        }
+        
        
         
         
@@ -58,6 +107,7 @@ public class DashBoardController implements Initializable {
             lblTimeStatus.setText("Good Morning ,");
             System.out.println("Good Morning ,");
         }
+        
         
     }    
 
@@ -109,6 +159,47 @@ public class DashBoardController implements Initializable {
 //        primaryStage.setScene(scene);
 //        primaryStage.centerOnScreen();
 //        primaryStage.show();
+    }
+    
+    @FXML
+    void imgAddUserOnAction(MouseEvent event) throws IOException {
+        Parent parent=FXMLLoader.load(getClass().getResource("../view/Profile.fxml"));
+        Scene scene = new Scene(parent);
+        Stage primaryStage=(Stage) root.getScene().getWindow();
+        primaryStage.setScene(scene);
+        primaryStage.centerOnScreen();
+        primaryStage.show();
+    }
+    
+   
+     @FXML
+    void lblAddUserOnAction(MouseEvent event) throws IOException {
+        Parent parent=FXMLLoader.load(getClass().getResource("../view/Profile.fxml"));
+        Scene scene = new Scene(parent);
+        Stage primaryStage=(Stage) root.getScene().getWindow();
+        primaryStage.setScene(scene);
+        primaryStage.centerOnScreen();
+        primaryStage.show();
+    }
+    
+    @FXML
+    void EventsTab(MouseEvent event) {
+
+    }
+
+    @FXML
+    void InvestmentsTab(MouseEvent event) {
+
+    }
+
+    @FXML
+    void ProjectsTab(MouseEvent event) throws IOException {
+        Parent parent=FXMLLoader.load(getClass().getResource("../view/Project.fxml"));
+        Scene scene = new Scene(parent);
+        Stage primaryStage=(Stage) root.getScene().getWindow();
+        primaryStage.setScene(scene);
+        primaryStage.centerOnScreen();
+        primaryStage.show();
     }
     
 }

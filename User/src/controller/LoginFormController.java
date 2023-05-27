@@ -70,19 +70,23 @@ public class LoginFormController implements Initializable {
     @FXML
     private void btnLoginOnAction(ActionEvent event) throws IOException, ClassNotFoundException, SQLException {
         Connection connection = DBConnection.getInstance().getConnection();
-        PreparedStatement stmt=connection.prepareStatement("select * from user where userName='"+txtUserName.getText()+"'and Password='"+txtPassword.getText()+"'");
+        Statement stmt=connection.createStatement();
         try{ 
-            ResultSet rs = stmt.executeQuery();
-          
+            ResultSet rs = stmt.executeQuery("select * from Person where userName='"+txtUserName.getText()+"'and Password='"+txtPassword.getText()+"'");
+            
            if(rs.next()){
                //Person person=new Admin();
-               String name=rs.getString(8);
-                String password=rs.getString(9);
-                System.out.println(name+password);
+                Parent parent=FXMLLoader.load(getClass().getResource("../view/DashBoard.fxml"));
+                Scene scene = new Scene(parent);
+                Stage primaryStage=(Stage) root.getScene().getWindow();
+                primaryStage.setScene(scene);
+                primaryStage.centerOnScreen();
+                primaryStage.show();
+              
                
            }
         }catch(SQLException e){
-            System.out.println(e.getCause());
+            System.out.println("DatabaseConnectivity has lost");
             //Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"successfully Registered");
             //alert.setTitle("Confirmation alert");
             //alert.setHeaderText("NOW YOU CAN START THE JOURNEY.");
@@ -91,12 +95,7 @@ public class LoginFormController implements Initializable {
         }
         
 
-        Parent parent=FXMLLoader.load(getClass().getResource("../view/DashBoard.fxml"));
-        Scene scene = new Scene(parent);
-        Stage primaryStage=(Stage) root.getScene().getWindow();
-        primaryStage.setScene(scene);
-        primaryStage.centerOnScreen();
-        primaryStage.show();
+       
     
     }
 }

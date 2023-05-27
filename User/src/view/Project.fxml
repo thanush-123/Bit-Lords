@@ -24,7 +24,7 @@
                      <children>
                         <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../images/dashboard.png" />
+                              <Image url="@../images/dashboard.png" />
                            </image>
                         </ImageView>
                         <Label onMouseClicked="#dashboardOnClick" prefHeight="30.0" prefWidth="110.0" text="Dashboard" textFill="#184e77">
@@ -41,7 +41,7 @@
                      <children>
                         <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../images/user.png" />
+                              <Image url="@../images/user.png" />
                            </image>
                         </ImageView>
                         <Label onMouseClicked="#investmentsOnClick" prefHeight="30.0" prefWidth="110.0" text="Investments" textFill="#184e77">
@@ -58,7 +58,7 @@
                      <children>
                         <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../images/file.png" />
+                              <Image url="@../images/file.png" />
                            </image>
                         </ImageView>
                         <Label onMouseClicked="#projectsOnClick" prefHeight="30.0" prefWidth="110.0" text="Projects" textFill="#184e77">
@@ -75,7 +75,7 @@
                      <children>
                         <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../images/check.png" />
+                              <Image url="@../images/check.png" />
                            </image>
                         </ImageView>
                         <Label onMouseClicked="#EventsOnClick" prefHeight="30.0" prefWidth="110.0" text="Events" textFill="#184e77">
@@ -92,7 +92,7 @@
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../images/phone-book.png" />
+                              <Image url="@../images/phone-book.png" />
                            </image>
                         </ImageView>
                         <Label onMouseClicked="#ContactOnClick" prefHeight="30.0" prefWidth="110.0" text="Contact" textFill="#184e77">
@@ -142,7 +142,7 @@
                   </Label>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../images/user.png" />
+                        <Image url="@../images/user.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="10.0" right="30.0" />
@@ -181,12 +181,6 @@
             <HBox alignment="CENTER" prefHeight="151.0" prefWidth="1029.0">
                <children>
                   <Pane prefHeight="151.0" prefWidth="333.0" />
-                  <TableView prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
-                    <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
-                    </columns>
-                  </TableView>
                   <Pane prefHeight="151.0" prefWidth="354.0" />
                </children>
                <VBox.margin>

@@ -4,8 +4,13 @@
  */
 package controller;
 
+import db.DBConnection;
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
@@ -36,8 +41,26 @@ public class ProjectInsertController implements Initializable {
 
     @FXML
     private void btnAddProjectOnAction(MouseEvent event) {
-        txtProjectName.getText();
-        txtProjectDescription.getText();
+  
+        try {
+          PreparedStatement prestmt = DBConnection.getInstance().getConnection().prepareStatement("insert into Project(Pname,Pdescription,status) values(?,?,?)");
+//        prestmt.setString(1, getNewId());
+          prestmt.setString(1, txtProjectName.getText());
+          prestmt.setString(2, txtProjectDescription.getText());
+          prestmt.setString(3,"statustest" );
+//        prestmt.setString(4, ((RadioButton)gender.getSelectedToggle()).getText());
+//        prestmt.setString(5, txtMobileNumber.getText());
+//        prestmt.setString(6, txtEmail.getText());
+//        prestmt.setString(7, txtUserName.getText());
+//        prestmt.setString(8, pwdPassword.getText());       
+        prestmt.execute();
+        prestmt.close();
+//        System.out.println(getNewId());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ProjectInsertController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ProjectInsertController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
     

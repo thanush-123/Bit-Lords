@@ -14,6 +14,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
@@ -101,7 +103,13 @@ public class RegisterFormController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        try {
+            System.out.println(getNewId());
+        } catch (SQLException ex) {
+            Logger.getLogger(RegisterFormController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RegisterFormController.class.getName()).log(Level.SEVERE, null, ex);
+        }
        
     }    
 
@@ -120,7 +128,7 @@ public class RegisterFormController implements Initializable {
     private void btnRegisterOnAction(ActionEvent event) throws ClassNotFoundException, SQLException, IOException  {
         //dbConnection
         
-//        PreparedStatement prestmt = DBConnection.getInstance().getConnection().prepareStatement("insert into user([Name],[Country],[Age],[Gender],[MobileNo],[Email],[Username],[Password]) values(?,?,?,?,?,?,?,?)");
+//        PreparedStatement prestmt = DBConnection.getInstance().getConnection().prepareStatement("insert into Person([Name],[Country],[Age],[Gender],[MobileNo],[Email],[Username],[Password]) values(?,?,?,?,?,?,?,?)");
 //        //prestmt.setString(1, getNewId());
 //        prestmt.setString(1, txtName.getText());
 //        prestmt.setString(2, txtCountry.getText());

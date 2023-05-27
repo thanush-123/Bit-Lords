@@ -40,7 +40,7 @@ public class InvestmentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
        loadTable();
        tblProject.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("id"));
-       tblProject.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("pId"));
+       tblProject.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("projectId"));
        tblProject.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("pName"));
        tblProject.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("price"));
        tblProject.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("total"));
@@ -103,6 +103,7 @@ public class InvestmentController implements Initializable {
 
     @FXML
     private void btnAddRefreshOnAction(MouseEvent event) {
+        
     }
     
 }

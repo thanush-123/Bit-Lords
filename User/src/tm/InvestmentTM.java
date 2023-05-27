@@ -12,7 +12,7 @@ package tm;
  */
 public class InvestmentTM{
     String id;
-    String pId;
+    String projectId;
     String pName;
     String unitPrice;
     String total;
@@ -22,9 +22,9 @@ public class InvestmentTM{
 
     
     
-    public InvestmentTM(String id, String pId, String pName, String unitPrice, String total) {
+    public InvestmentTM(String id, String projectId, String pName, String unitPrice, String total) {
         this.id = id;
-        this.pId = pId;
+        this.projectId = projectId;
         this.pName = pName;
         this.unitPrice = unitPrice;
         this.total = total;
@@ -39,11 +39,11 @@ public class InvestmentTM{
     }
 
     public String getpId() {
-        return pId;
+        return projectId;
     }
 
     public void setpId(String pId) {
-        this.pId = pId;
+        this.projectId = pId;
     }
 
     public String getpName() {

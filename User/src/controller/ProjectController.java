@@ -116,7 +116,7 @@ public class ProjectController implements Initializable {
 
     @FXML
     private void btnAddProjectOnAction(MouseEvent event) throws IOException {
-        Parent parent=FXMLLoader.load(getClass().getResource("../view/DashBoard.fxml"));
+        Parent parent=FXMLLoader.load(getClass().getResource("../view/ProjectInsert.fxml"));
         Scene scene = new Scene(parent);
         Stage primaryStage=(Stage) root.getScene().getWindow();
         primaryStage.setScene(scene);
